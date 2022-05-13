@@ -2,7 +2,8 @@
   <div class="home">
     <div class="intro">
       <h1 class="hey"> Hey I'm </h1>
-      <h1 class="name"> Stephen Chan! </h1>
+      <h1 class="name"> Stephen Chan! </h1> <img src="../assets/AvatarMaker.png">
+      <router-link to="/project"><button class="contact">Contact Me</button></router-link>
       <h1 class="info"> Welcome to my world. </h1>
     </div>
     <div class="buttons">
@@ -26,7 +27,15 @@
 
 <style scoped>
 
-
+.contact:hover {
+  font-size: 10px;
+}
+img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+}
 .buttons {
   position: relative;
   left: 110px;
@@ -85,10 +94,12 @@
   background-position: 600px;
   }
 }
+
 .intro {
 text-align: left;
 margin: 30px;
 padding: 0px;
+position: relative;
 }
 
 .name {
