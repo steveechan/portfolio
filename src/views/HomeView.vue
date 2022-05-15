@@ -3,7 +3,8 @@
     <div class="intro">
       <h1 class="hey"> Hey I'm </h1>
       <h1 class="name"> Stephen Chan! </h1> <img src="../assets/AvatarMaker.png">
-      <router-link to="/project"><button class="contact">Contact Me</button></router-link>
+      <router-link to="/contact"><button class="contact">Contact Me</button></router-link>
+      <button>Download</button>
       <h1 class="info"> Welcome to my world. </h1>
     </div>
     <div class="buttons">
