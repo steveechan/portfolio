@@ -5,7 +5,7 @@
       <h1 class="whoinfo"> I am a senior at New Jersey Institute of Technology. I have a strong passion for front-end development and it has become a passion of mine. </h1>
     </div>
     <div class="bio">
-      Hello
+      Helloaa
     </div>
     <div class="skills">
       <h1 v-if="isHidden" class="skillsInfo"> Languages/Frameworks </h1>
