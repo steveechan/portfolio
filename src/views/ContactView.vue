@@ -2,7 +2,9 @@
  <div class="contact"> Contact Me </div>
 </template>
 
-<style>
+
+
+<style scoped>
 .contact {
     text-align: center;
     margin: 100px;

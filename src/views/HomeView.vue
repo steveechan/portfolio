@@ -8,11 +8,11 @@
       <h1 class="info"> Welcome to my world. </h1>
     </div>
     <div class="buttons">
-    <a href="https://www.linkedin.com/in/stephen---chan/"><button class="linkedin">
+    <a v-bind:href="linkedin"><button class="linkedin">
       <h1> LinkedIn </h1>
     </button>
     </a>
-    <a href="https://github.com/steveechan"><button class="github">
+    <a v-bind:href="github"><button class="github">
       <h1> GitHub </h1>
     </button>
     </a>
@@ -22,15 +22,19 @@
 </template>
 
 <script>
-
+export default {
+  data() {
+    return {
+      github: "https://github.com/steveechan",
+      linkedin: "https://www.linkedin.com/in/stephen---chan/",
+    }
+  }
+}
 </script>
 
 
 <style scoped>
 
-.contact:hover {
-  font-size: 10px;
-}
 img {
   width: 200px;
   height: 200px;
