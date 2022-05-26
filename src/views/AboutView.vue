@@ -1,16 +1,20 @@
 <template>
   <div class="about">
     <div class="school">
-      <h1 class="who"> Who am I? </h1>
-      <h1 class="whoinfo"> I am a senior at New Jersey Institute of Technology. I have a strong passion for front-end development and it has become a passion of mine. </h1>
+      <h1 data-text="Who am I?" class="who"> Who am I? </h1>
+      <h1 class="whoinfo"> I am a senior at New Jersey Institute of Technology. I am a self taught and determined front-end developer. My main front-end framework is Vue.js 
+        and my most proficient languages are Java and JavaScript. I love developing new web applications and solving coding problems. </h1>
     </div>
     <div class="bio">
-      Helloaa
+      <h1 data-text="Why?" class="why"> Why? </h1>
+      <h1 class="bioinfo">
+      My interest for programming started at a young age when I played a game called ROBLOX. They had a studio mode where you could create your own games with the language "LUA".
+      That interest had sparked within me when I took a class called Internet Applications where we created our own fullstack application.  </h1>
     </div>
     <div class="skills">
-      <h1 v-if="isHidden" class="skillsInfo"> Languages/Frameworks </h1>
-      <h1 class="skill"> {{ languages[count] }}</h1> 
-      <button v-if="isHidden" @click="showSkills();isHidden = !isHidden"> Show More </button>
+      <h1 data-text="Languages/Frameworks" class="skillsInfo"> Languages/Frameworks </h1>
+      <h1 class="skill" v-if="isHidden"> {{ languages[count] }}</h1> 
+      <button class="buttonskill" @click="showSkills(); isHidden = !isHidden"> Display All </button>
     </div>
   </div>
 </template>
@@ -19,7 +23,7 @@
 export default {
   data() {
     return {
-      isHidden: true,
+      isHidden: false,
       count: 0,
       languages: [
         "Java",
@@ -41,15 +45,94 @@ export default {
       setInterval(() => {
         this.count = this.count + 1
       }, 1000);
+      this.count = 0;
     }
+
   }
 }
 </script>
 
 <style>
 
+.why {
+  color: white;
+  font-size: 5vw;
+  text-transform: uppercase;
+  font-family: monospace;
+  text-align: center;
+}
+
+.why::before {
+  content: attr(data-text);
+  position: absolute;
+  width: 100%;
+  color: #05cee9;
+  -webkit-text-stroke: 0vw #383d52;
+  font-family: monospace;
+  text-align: center;
+  overflow: hidden;
+  animation: animate 6s linear infinite;
+}
+
+@keyframes animate {
+  0%, 10%, 100%
+  {
+    width: 0;
+  }
+  70%, 90%
+  {
+    width: 11%;
+  }
+}
+
+@keyframes animate2 {
+  0%, 10%, 100%
+  {
+    width: 0;
+  }
+  70%, 90%
+  {
+    width: 100%;
+  }
+}
+
+@keyframes animate3 {
+  0%, 10%, 100%
+  {
+    width: 0;
+  }
+  70%, 90%
+  {
+    width: 10%;
+  }
+}
+
+
 .skill {
   text-align: center;
+}
+
+.skillsInfo::before {
+  content: attr(data-text);
+  position: absolute;
+  width: 100%;
+  color: #05cee9;
+  -webkit-text-stroke: 0vw #383d52;
+  font-family: monospace;
+  text-align: center;
+  overflow: hidden;
+  animation: animate2 6s linear infinite;
+}
+.skills {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  color: white;
+  font-size: 2vw;
+  text-transform: uppercase;
+}
+.bioinfo {
+  font-family: monospace;
 }
 .about {
   width: 100vh;
@@ -59,18 +142,28 @@ export default {
   height: 400px;
 }
 .who {
+  color: white;
+  font-size: 2vw;
+  text-transform: uppercase;
   font-family: monospace;
+  text-align: center;
+}
+
+.who::before {
+  content: attr(data-text);
+  position: absolute;
+  width: 100%;
+  color: #05cee9;
+  -webkit-text-stroke: 0vw #383d52;
+  font-family: monospace;
+  text-align: center;
+  overflow: hidden;
+  animation: animate3 6s linear infinite;
 }
 
 .whoinfo {
   font-size: 25px;
-}
-
-.skills {
-  position: absolute;
-  left: 45%;
-  top: 10%;
-  text-align: center;
+  font-family: monospace;
 }
 
 .skillsInfo {
