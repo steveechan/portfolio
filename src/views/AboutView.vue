@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <div class="school">
-      <h1 data-text="Who am I?" class="who"> Who am I? </h1>
+      <h1 data-text="Who?" class="who"> Who? </h1>
       <h1 class="whoinfo"> I am a senior at New Jersey Institute of Technology. I am a self taught and determined front-end developer. My main front-end framework is Vue.js 
         and my most proficient languages are Java and JavaScript. I love developing new web applications and solving coding problems. </h1>
     </div>
@@ -13,17 +13,18 @@
     </div>
     <div class="skills">
       <h1 data-text="Languages/Frameworks" class="skillsInfo"> Languages/Frameworks </h1>
-      <h1 class="skill" v-if="isHidden"> {{ languages[count] }}</h1> 
-      <button class="buttonskill" @click="showSkills(); isHidden = !isHidden"> Display All </button>
+      <h1 class="skill"> {{ languages[count] }}</h1> 
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  mounted() {
+    this.showSkills();
+  },
   data() {
     return {
-      isHidden: false,
       count: 0,
       languages: [
         "Java",
@@ -43,9 +44,15 @@ export default {
   methods: {
     showSkills: function () {
       setInterval(() => {
-        this.count = this.count + 1
+        this.counting()
       }, 1000);
-      this.count = 0;
+    },
+
+    counting: function() {
+      this.count++;
+      if(this.count === this.languages.length - 1) {
+        this.count = 0;
+      }
     }
 
   }
@@ -103,7 +110,7 @@ export default {
   }
   70%, 90%
   {
-    width: 10%;
+    width: 4.4%;
   }
 }
 

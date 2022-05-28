@@ -40,6 +40,7 @@ img {
   height: 200px;
   object-fit: cover;
   border-radius: 50%;
+  box-shadow: 0px 0px 20px rgb(5,206,233);
 }
 .buttons {
   position: relative;
